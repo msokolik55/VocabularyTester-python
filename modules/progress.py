@@ -10,6 +10,7 @@ def save_progress(words: Counter) -> None:
 
 def reset_progress() -> None:
     save_progress(dict())
+    print("Progress reset\n")
 
 
 def load_progress() -> Counter:
