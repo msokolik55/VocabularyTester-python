@@ -1,17 +1,10 @@
-from modules.vocabulary import play
+from modules.vocabulary import help, play
 from modules.api import alter_offline
 from modules.filler import get_words
 from modules.progress import load_progress, save_progress
 from modules.own_types import Vocabulary, Counter
 
 FILE_NAME = None
-
-
-def help() -> None:
-    print("answer:")
-    print("\th, help\t\tprints this help")
-    print("\tq, quit\t\tends the session")
-    print("\tr, reset\t\tresets the progress")
 
 
 def main() -> None:

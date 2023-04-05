@@ -1,6 +1,5 @@
 from random import randrange
 from typing import List, Tuple
-from main import help
 from modules.progress import reset_progress
 from modules.own_types import Vocabulary, Answers, Counter
 
@@ -45,6 +44,14 @@ def format_words(words: Answers) -> Answers:
 def get_count_guessed(used_words: Counter) -> int:
     return [used_words[word][0]
             for word in used_words.keys()].count(True)
+
+
+def help() -> None:
+    print("response:")
+    print("\th, help\t\tprints this help")
+    print("\tq, quit\t\tends the session")
+    print("\tr, reset\tresets the progress")
+    print()
 
 
 def play(words: Vocabulary, used_words: Counter) -> None:
