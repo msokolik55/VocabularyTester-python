@@ -1,11 +1,15 @@
 from random import randrange
 from typing import List, Tuple
+from main import help
+from modules.progress import reset_progress
 from modules.own_types import Vocabulary, Answers, Counter
 
 
 DELIM_ANSWERS = " / "
 SPECIAL_CHARS = {"ñ": "ň", "ü": "\"u"}
+HELP_RESPONSES = {"h", "help"}
 END_RESPONSES = {"q", "quit"}
+RESET_RESPONSES = {"r", "reset"}
 
 
 def get_record(words: Vocabulary) -> Tuple[str, Answers]:
@@ -61,8 +65,16 @@ def play(words: Vocabulary, used_words: Counter) -> None:
         print(task, "=", end=" ")
         response = input().strip()
 
+        if response in HELP_RESPONSES:
+            help()
+            continue
+
         if response in END_RESPONSES:
             return None
+
+        if response in RESET_RESPONSES:
+            reset_progress()
+            continue
 
         formatted = format_words(corr_answers)
         if response in formatted:
