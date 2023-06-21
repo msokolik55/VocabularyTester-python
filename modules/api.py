@@ -1,13 +1,22 @@
 from requests import get
 from json import loads, dumps
+from dotenv import dotenv_values
 from typing import Dict
 from modules.own_types import Vocabulary
 from modules.constants import OFFLINE_DATAFILE
 
-URL = 'https://api.jsonbin.io/v3/b/641cb7aeebd26539d095fee7/latest'
+config = dotenv_values(".env")
+
+
+def parse_env(key: str) -> str:
+    value = config.get(key, "")
+    return "" if value is None else value
+
+
+URL = parse_env("API_URL")
 HEADERS = {
-    'X-Master-Key':
-        '$2b$10$EuWtqsDbYl7LBtzmH86A3OhYPtMPzVlf88YCTEvFsNyMg9crOcTKS'
+    'X-Access-Key':
+        parse_env("API_ACCESS_PASSWORD")
 }
 
 
