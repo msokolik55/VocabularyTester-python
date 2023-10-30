@@ -9,11 +9,11 @@ FILE_NAME = None
 
 def main() -> None:
     words: Vocabulary = get_words(FILE_NAME)
-    try:
-        if alter_offline():
-            print("New version of words downloaded to offline file.")
-    except ConnectionError:
-        pass
+    #try:
+    #    if alter_offline():
+    #        print("New version of words downloaded to offline file.")
+    #except ConnectionError:
+    #    pass
 
     used_words: Counter = load_progress()
     try:
