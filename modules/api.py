@@ -1,16 +1,17 @@
 from requests import get
 from json import loads, dumps
-from dotenv import dotenv_values
+# from dotenv import dotenv_values
 from typing import Dict
 from modules.own_types import Vocabulary
 from modules.constants import OFFLINE_DATAFILE
 
-config = dotenv_values(".env")
+# config = dotenv_values(".env")
 
 
 def parse_env(key: str) -> str:
-    value = config.get(key, "")
-    return "" if value is None else value
+    # value = config.get(key, "")
+    # return "" if value is None else value
+    return ""
 
 
 URL = parse_env("API_URL")

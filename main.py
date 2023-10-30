@@ -4,7 +4,7 @@ from modules.filler import get_words
 from modules.progress import load_progress, save_progress
 from modules.own_types import Vocabulary, Counter
 
-FILE_NAME = None
+FILE_NAME = "data/test.md"
 
 
 def main() -> None:
