@@ -64,5 +64,6 @@ Open the data/vocabulary.md file to modify or add new words to the vocabulary li
 - Offline Mode:
   - Enable or disable offline mode based on your preferences.
 
-License
+## License
+
 This project is licensed under the [MIT License](LICENSE).
